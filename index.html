@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Penganteun M01</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link CSS eksternal dari sumber aslinya -->
+  <link rel="stylesheet" href="https://penganteun.com/m01/static/css/styles.css">
+  <link rel="stylesheet" href="https://penganteun.com/m01/static/css/main.css">
+</head>
+<body>
+  <div id="main-container">
+    <h1>Penganteun M01</h1>
+    <!-- Simulasi Form sesuai aslinya -->
+    <form id="simulasi-form">
+      <label for="name">Nama Peserta:</label>
+      <input type="text" id="name" name="name" required>
+      <br><br>
+      <button type="submit">Mulai Simulasi</button>
+    </form>
+    <div id="simulasi-content" style="display:none;">
+      <h2>Soal Simulasi</h2>
+      <!-- Contoh soal, kamu bisa mengedit atau menambah -->
+      <p>1. Apa tujuan dari Penganteun Modul 01?</p>
+      <input type="radio" name="q1" value="A" id="q1a"> <label for="q1a">A. Simulasi Ujian</label><br>
+      <input type="radio" name="q1" value="B" id="q1b"> <label for="q1b">B. Konsultasi</label><br>
+      <input type="radio" name="q1" value="C" id="q1c"> <label for="q1c">C. Akreditasi</label><br>
+      <br>
+      <button type="button" onclick="showResult()">Selesai</button>
+    </div>
+    <div id="result" style="display:none;">
+      <h2>Hasil Simulasi</h2>
+      <p id="score"></p>
+    </div>
+  </div>
+  <!-- Script JS (bisa link eksternal jika ada) -->
+  <script>
+    const form = document.getElementById('simulasi-form');
+    const content = document.getElementById('simulasi-content');
+    const result = document.getElementById('result');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.style.display = "none";
+      content.style.display = "block";
+    });
+    function showResult() {
+      content.style.display = "none";
+      result.style.display = "block";
+      // Penilaian dummy
+      document.getElementById('score').innerText = "Nilai: 100";
+    }
+  </script>
+</body>
+</html>
